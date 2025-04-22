@@ -57,7 +57,7 @@
 <body>
 
     <!-- ======================= HEADER + NAVIGATION ======================= -->
-    <header id="header">
+    <header id="header" tabindex="0">
         <div class="container">
             <nav>
                 <!-- Website logo -->
@@ -91,7 +91,7 @@
 
     <!-- ======================= PORTFOLIO SECTION ======================= -->
     <main>
-        <div id="portfolio">
+        <div id="portfolio" tabindex="0">
             <div class="container">
                 <h1 class="sub-title">Portfolio</h1>
 
@@ -100,7 +100,7 @@
 
                     <!-- Project .5: Google -->
                     <div class="work">
-                        <img src="img/google.png" alt="Logo of the comapny Google">
+                        <img src="img/google.png" alt="Logo of the company Google">
                         <div class="layer">
                             <h2>Google <br>Incoming APM Intern</h2>
                         </div>
@@ -228,7 +228,7 @@
         </div>
 
         <!-- ======================= ABOUT SECTION ======================= -->
-        <div id="about">
+        <div id="about" tabindex="0">
             <div class="container">
                 <div class="row">
                     <div class="about-col-1">
@@ -301,30 +301,36 @@
         </div>
 
 
-        <section id="featured-tiktok">
+        <section id="featured-tiktok" tabindex="0">
             <div class="container">
                 <h2 class="sub-title">Featured TikToks</h2>
                 <div class="tiktok-grid">
                     <!-- TikTok #1 -->
-                    <blockquote class="tiktok-embed show-on-all"
-                        cite="https://www.tiktok.com/@_curl_d_/video/7400161533096938782"
-                        data-video-id="7400161533096938782" data-muted="true" style="max-width: 325px;">
-                        <section>Loading...</section>
-                    </blockquote>
+                    <div aria-hidden="true">
+                        <blockquote class="tiktok-embed show-on-all"
+                            cite="https://www.tiktok.com/@_curl_d_/video/7400161533096938782"
+                            data-video-id="7400161533096938782" data-muted="true" style="max-width: 325px;">
+                            <section>Loading...</section>
+                        </blockquote>
+                    </div>
 
                     <!-- TikTok #2 -->
-                    <blockquote class="tiktok-embed hide-on-mobile"
-                        cite="https://www.tiktok.com/@_curl_d_/video/7441320375306177822"
-                        data-video-id="7441320375306177822" data-muted="true" style="max-width: 325px;">
-                        <section>Loading...</section>
-                    </blockquote>
+                    <div aria-hidden="true">
+                        <blockquote class="tiktok-embed hide-on-mobile"
+                            cite="https://www.tiktok.com/@_curl_d_/video/7441320375306177822"
+                            data-video-id="7441320375306177822" data-muted="true" style="max-width: 325px;">
+                            <section>Loading...</section>
+                        </blockquote>
+                    </div>
 
                     <!-- TikTok #3 -->
-                    <blockquote class="tiktok-embed hide-on-mobile"
-                        cite="https://www.tiktok.com/@_curl_d_/video/7410179113538866462"
-                        data-video-id="7410179113538866462" data-muted="true" style="max-width: 325px;">
-                        <section>Loading...</section>
-                    </blockquote>
+                    <div aria-hidden="true">
+                        <blockquote class="tiktok-embed hide-on-mobile"
+                            cite="https://www.tiktok.com/@_curl_d_/video/7410179113538866462"
+                            data-video-id="7410179113538866462" data-muted="true" style="max-width: 325px;">
+                            <section>Loading...</section>
+                        </blockquote>
+                    </div>
                 </div>
             </div>
         </section>
@@ -332,7 +338,7 @@
         <script async src="https://www.tiktok.com/embed.js"></script>
 
         <!-- ======================= CONTACT SECTION ======================= -->
-        <div id="contact">
+        <div id="contact" tabindex="0">
             <div class="container">
                 <div class="row">
 
