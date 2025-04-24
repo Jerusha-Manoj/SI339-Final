@@ -300,18 +300,24 @@
             </div>
         </div>
         <!-- ======================= TIKTOKS ======================= -->
-        <section id="featured-tiktok" tabindex="0">
+        <section id="featured-tiktok" tabindex="0" aria-labelledby="tiktok-heading">
             <div class="container">
-                <h1 class="sub-title">Featured TikToks</h1>
+                <h1 id="tiktok-heading" class="sub-title">Featured TikToks</h1>
                 <div class="tiktok-grid">
+
                     <!-- TikTok #1 -->
                     <div class="tiktok-video">
                         <iframe src="https://www.tiktok.com/embed/v2/7400161533096938782?autoplay=1&mute=1" width="325"
                             height="775" frameborder="0" allowfullscreen
                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                             title="TikTok video by @_curl_d_ about curly hair styling"
-                            aria-label="TikTok video by @_curl_d_ about curly hair styling">
-                        </iframe>
+                            aria-label="TikTok video by @_curl_d_ about curly hair styling" role="document"></iframe>
+                        <p class="sr-only">
+                            <a href="https://www.tiktok.com/@_curl_d_/video/7400161533096938782" target="_blank"
+                                rel="noopener">
+                                Watch this TikTok video by @_curl_d_ about curly hair styling on TikTok.com
+                            </a>
+                        </p>
                     </div>
 
                     <!-- TikTok #2 -->
@@ -320,8 +326,14 @@
                             height="750" frameborder="0" allowfullscreen
                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                             title="TikTok video by @_curl_d_ about curly hair maintenance"
-                            aria-label="TikTok video by @_curl_d_ about curly hair maintenance">
-                        </iframe>
+                            aria-label="TikTok video by @_curl_d_ about curly hair maintenance"
+                            role="document"></iframe>
+                        <p class="sr-only">
+                            <a href="https://www.tiktok.com/@_curl_d_/video/7441320375306177822" target="_blank"
+                                rel="noopener">
+                                Watch this TikTok video by @_curl_d_ about curly hair maintenance on TikTok.com
+                            </a>
+                        </p>
                     </div>
 
                     <!-- TikTok #3 -->
@@ -330,12 +342,19 @@
                             height="750" frameborder="0" allowfullscreen
                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                             title="TikTok video by @_curl_d_ showcasing hair routine"
-                            aria-label="TikTok video by @_curl_d_ showcasing hair routine">
-                        </iframe>
+                            aria-label="TikTok video by @_curl_d_ showcasing hair routine" role="document"></iframe>
+                        <p class="sr-only">
+                            <a href="https://www.tiktok.com/@_curl_d_/video/7410179113538866462" target="_blank"
+                                rel="noopener">
+                                Watch this TikTok video by @_curl_d_ showcasing a curly hair routine on TikTok.com
+                            </a>
+                        </p>
                     </div>
+
                 </div>
             </div>
         </section>
+
 
 
         <!-- ======================= CONTACT SECTION ======================= -->
@@ -400,93 +419,93 @@
         </footer>
 
 
-        </main>
+    </main>
 
-        <!-- ======================= JAVASCRIPT ======================= -->
+    <!-- ======================= JAVASCRIPT ======================= -->
 
-        <!-- Opens a link in a new tab when clicking on a post -->
-        <script>
-            function openPost(event) {
-                event.preventDefault();
-                window.open(event.currentTarget.parentElement.href, '_blank');
+    <!-- Opens a link in a new tab when clicking on a post -->
+    <script>
+        function openPost(event) {
+            event.preventDefault();
+            window.open(event.currentTarget.parentElement.href, '_blank');
+        }
+    </script>
+
+    <!-- Tabs for About section: shows only one at a time -->
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
             }
-        </script>
-
-        <!-- Tabs for About section: shows only one at a time -->
-        <script>
-            var tablinks = document.getElementsByClassName("tab-links");
-            var tabcontents = document.getElementsByClassName("tab-contents");
-            function opentab(tabname) {
-                for (tablink of tablinks) {
-                    tablink.classList.remove("active-link");
-                }
-                for (tabcontent of tabcontents) {
-                    tabcontent.classList.remove("active-tab");
-                }
-                event.currentTarget.classList.add("active-link");
-                document.getElementById(tabname).classList.add("active-tab");
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
             }
-        </script>
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 
-        <!-- Mobile menu toggling -->
-        <script>
-            var sidemenu = document.getElementById("sidemenu");
-            function openmenu() {
-                sidemenu.style.right = "0";
-            }
-            function closemenu() {
-                sidemenu.style.right = "-200px";
-            }
-        </script>
+    <!-- Mobile menu toggling -->
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
 
-        <!-- Form submission to Google Sheet -->
-        <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbwZYsVhET1XKa2_XdFvXct16rclEwvZ6iv8bOxaK2jmunOwU9SmcpmVoKV8P5Cc2s-0/exec'
-            const form = document.forms['submit-to-google-sheet']
-            const msg = document.getElementById("msg")
+    <!-- Form submission to Google Sheet -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwZYsVhET1XKa2_XdFvXct16rclEwvZ6iv8bOxaK2jmunOwU9SmcpmVoKV8P5Cc2s-0/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
 
-            form.addEventListener('submit', e => {
-                e.preventDefault()
-                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                    .then(response => {
-                        msg.innerHTML = "Message Sent!"
-                        setTimeout(() => { msg.innerHTML = "" }, 5000)
-                        form.reset()
-                    })
-                    .catch(error => console.error('Error!', error.message))
-            })
-        </script>
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message Sent!"
+                    setTimeout(() => { msg.innerHTML = "" }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 
-        <!-- Typing animation that repeats forever -->
-        <script>
-                (function () {
-                    const text = "A Computer Science Student!";
-                    const element = document.querySelector(".typing-text");
-                    const delay = 100;
-                    const loopDelay = 1000;
+    <!-- Typing animation that repeats forever -->
+    <script>
+            (function () {
+                const text = "A Computer Science Student!";
+                const element = document.querySelector(".typing-text");
+                const delay = 100;
+                const loopDelay = 1000;
 
-                    let index = 0;
+                let index = 0;
 
-                    function addLetter() {
-                        if (index < text.length) {
-                            element.innerHTML += text.charAt(index);
-                            index++;
-                            setTimeout(addLetter, delay);
-                        } else {
-                            setTimeout(function () {
-                                index = 0;
-                                element.textContent = '';
-                                addLetter();
-                            }, loopDelay);
-                        }
+                function addLetter() {
+                    if (index < text.length) {
+                        element.innerHTML += text.charAt(index);
+                        index++;
+                        setTimeout(addLetter, delay);
+                    } else {
+                        setTimeout(function () {
+                            index = 0;
+                            element.textContent = '';
+                            addLetter();
+                        }, loopDelay);
                     }
-                    addLetter();
-                })();
-        </script>
+                }
+                addLetter();
+            })();
+    </script>
 
-        <script>
-            document.getElementById("year").textContent = new Date().getFullYear();
-        </script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
 
 </body>
