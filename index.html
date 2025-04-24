@@ -90,7 +90,7 @@
 
 
     <!-- ======================= PORTFOLIO SECTION ======================= -->
-    <main>
+    <<main aria-label="Main content of Jerusha's portfolio site">>
         <div id="portfolio" tabindex="0">
             <div class="container">
                 <h1 class="sub-title">Portfolio</h1>
@@ -309,7 +309,8 @@
                         <iframe src="https://www.tiktok.com/embed/v2/7400161533096938782?autoplay=1&mute=1" width="325"
                             height="775" frameborder="0" allowfullscreen
                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                            title="TikTok video by @_curl_d_ about curly hair styling">
+                            title="TikTok video by @_curl_d_ about curly hair styling"
+                            aria-label="TikTok video by @_curl_d_ about curly hair styling">
                         </iframe>
                     </div>
 
@@ -318,7 +319,8 @@
                         <iframe src="https://www.tiktok.com/embed/v2/7441320375306177822?autoplay=1&mute=1" width="325"
                             height="750" frameborder="0" allowfullscreen
                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                            title="TikTok video by @_curl_d_ about curly hair maintenance">
+                            title="TikTok video by @_curl_d_ about curly hair maintenance"
+                            aria-label="TikTok video by @_curl_d_ about curly hair maintenance">
                         </iframe>
                     </div>
 
@@ -327,7 +329,8 @@
                         <iframe src="https://www.tiktok.com/embed/v2/7410179113538866462?autoplay=1&mute=1" width="325"
                             height="750" frameborder="0" allowfullscreen
                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                            title="TikTok video by @_curl_d_ showcasing hair routine">
+                            title="TikTok video by @_curl_d_ showcasing hair routine"
+                            aria-label="TikTok video by @_curl_d_ showcasing hair routine">
                         </iframe>
                     </div>
                 </div>
@@ -397,93 +400,93 @@
         </footer>
 
 
-    </main>
+        </main>
 
-    <!-- ======================= JAVASCRIPT ======================= -->
+        <!-- ======================= JAVASCRIPT ======================= -->
 
-    <!-- Opens a link in a new tab when clicking on a post -->
-    <script>
-        function openPost(event) {
-            event.preventDefault();
-            window.open(event.currentTarget.parentElement.href, '_blank');
-        }
-    </script>
-
-    <!-- Tabs for About section: shows only one at a time -->
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
+        <!-- Opens a link in a new tab when clicking on a post -->
+        <script>
+            function openPost(event) {
+                event.preventDefault();
+                window.open(event.currentTarget.parentElement.href, '_blank');
             }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
+        </script>
 
-    <!-- Mobile menu toggling -->
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-        function openmenu() {
-            sidemenu.style.right = "0";
-        }
-        function closemenu() {
-            sidemenu.style.right = "-200px";
-        }
-    </script>
-
-    <!-- Form submission to Google Sheet -->
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwZYsVhET1XKa2_XdFvXct16rclEwvZ6iv8bOxaK2jmunOwU9SmcpmVoKV8P5Cc2s-0/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    msg.innerHTML = "Message Sent!"
-                    setTimeout(() => { msg.innerHTML = "" }, 5000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
-
-    <!-- Typing animation that repeats forever -->
-    <script>
-            (function () {
-                const text = "A Computer Science Student!";
-                const element = document.querySelector(".typing-text");
-                const delay = 100;
-                const loopDelay = 1000;
-
-                let index = 0;
-
-                function addLetter() {
-                    if (index < text.length) {
-                        element.innerHTML += text.charAt(index);
-                        index++;
-                        setTimeout(addLetter, delay);
-                    } else {
-                        setTimeout(function () {
-                            index = 0;
-                            element.textContent = '';
-                            addLetter();
-                        }, loopDelay);
-                    }
+        <!-- Tabs for About section: shows only one at a time -->
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            function opentab(tabname) {
+                for (tablink of tablinks) {
+                    tablink.classList.remove("active-link");
                 }
-                addLetter();
-            })();
-    </script>
+                for (tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+        <!-- Mobile menu toggling -->
+        <script>
+            var sidemenu = document.getElementById("sidemenu");
+            function openmenu() {
+                sidemenu.style.right = "0";
+            }
+            function closemenu() {
+                sidemenu.style.right = "-200px";
+            }
+        </script>
+
+        <!-- Form submission to Google Sheet -->
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwZYsVhET1XKa2_XdFvXct16rclEwvZ6iv8bOxaK2jmunOwU9SmcpmVoKV8P5Cc2s-0/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        msg.innerHTML = "Message Sent!"
+                        setTimeout(() => { msg.innerHTML = "" }, 5000)
+                        form.reset()
+                    })
+                    .catch(error => console.error('Error!', error.message))
+            })
+        </script>
+
+        <!-- Typing animation that repeats forever -->
+        <script>
+                (function () {
+                    const text = "A Computer Science Student!";
+                    const element = document.querySelector(".typing-text");
+                    const delay = 100;
+                    const loopDelay = 1000;
+
+                    let index = 0;
+
+                    function addLetter() {
+                        if (index < text.length) {
+                            element.innerHTML += text.charAt(index);
+                            index++;
+                            setTimeout(addLetter, delay);
+                        } else {
+                            setTimeout(function () {
+                                index = 0;
+                                element.textContent = '';
+                                addLetter();
+                            }, loopDelay);
+                        }
+                    }
+                    addLetter();
+                })();
+        </script>
+
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
 
 
 </body>
