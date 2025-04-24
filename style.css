@@ -570,18 +570,6 @@ label {
 
 
 
-#featured-tiktok {
-    background-color: #ffffff;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-#featured-tiktok .sub-title {
-    font-size: 40px;
-    color: #43392f;
-    margin-bottom: 30px;
-}
-
 .tiktok-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -589,8 +577,17 @@ label {
     justify-items: center;
 }
 
+.tiktok-video {
+    max-width: 325px;
+    width: 100%;
+}
+
 @media only screen and (max-width: 800px) {
     .hide-on-mobile {
         display: none !important;
     }
+}
+
+#featured-tiktok .sub-title {
+    margin: 40px 0 50px;
 }
