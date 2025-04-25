@@ -415,6 +415,12 @@ form .btn2 {
 
 }
 
+form input::placeholder,
+form textarea::placeholder {
+    color: white;
+    opacity: 1;
+}
+
 /*---------------css for small screens------*/
 
 nav .fas {
